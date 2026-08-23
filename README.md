@@ -1,0 +1,1 @@
+Took inspiration from [simple-technical-resume-template](https://github.com/steadyfall/simple-technical-resume-template), [rendercv](https://github.com/rendercv/rendercv) and [basic-typst-resume-template](https://github.com/stuxf/basic-typst-resume-template)
