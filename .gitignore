@@ -1,4 +1,2 @@
-/antigo
 *.pdf
-/template
-/icons/*
+/src/icons/*
