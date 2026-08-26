@@ -1,0 +1,27 @@
+# for a description of available keys, see https://github.com/typst/packages/?tab=readme-ov-file#package-format
+
+[package]
+name = "tech-focused-resume"
+version = "0.1.1"
+entrypoint = "src/lib.typ"
+authors = ["GuilhermeFigueira"]
+# TODO: Check wich license is best https://github.com/typst/packages/blob/main/docs/licensing.md
+license = "MIT"
+description = "A modular technical focused resume designed to be very costumizable and work well with ATS."
+repository = "https://github.com/guilhermefigueira/tech-focused-resume-template"
+keywords = ["cv", "resume", "technical","modular","costumizable",  "ATS"]
+categories = ["cv"]
+# TODO: Add or remove items to this list https://github.com/typst/packages/blob/main/docs/tips.md#what-to-commit-what-to-exclude
+exclude = [
+  ".github",
+  "scripts",
+  "tests",
+  ".typstignore",
+  "example.pdf",
+  "example.png",
+]
+
+[template]
+path = "template"
+entrypoint = "main.typ"
+thumbnail = "thumbnail.png"
