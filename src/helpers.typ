@@ -7,7 +7,7 @@
 }
 
 #let section(title, spacing-between: -0.5em, body) = {
-  [= #title]
+  [== #title]
   body
   v(spacing-between)
 }

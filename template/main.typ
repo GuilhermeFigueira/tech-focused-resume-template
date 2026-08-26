@@ -1,7 +1,4 @@
-#import "resume.typ": *
-#import "components/work.typ": *
-#import "components/education.typ": *
-#import "helpers.typ": *
+#import "@local/tech-focused-resume:0.1.0": *
 
 #let name = "Jane Doe"
 #let headline = "Full Stack Developer"

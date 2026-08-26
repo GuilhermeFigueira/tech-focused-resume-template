@@ -107,7 +107,6 @@
 
   // Main body.
   set par(justify: true)
-  show par: it => block(inset: (left: 1em), it)
   body
 }
 
