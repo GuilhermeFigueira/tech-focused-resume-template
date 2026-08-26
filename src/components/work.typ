@@ -11,18 +11,17 @@
 ) = {
   generic-two-by-two(
     top-left: strong(company),
-    top-right: dates,
-    bottom-left: {
-      [
-        #emph(title)
-        #if stack != "" [
-          | #emph(tech-stack)
-        ]
+    top-right: strong(dates),
+    bottom-left: [
+      #emph(title)
+      #if stack != "" [
+        | #emph(tech-stack)
       ]
-    },
+    ],
     bottom-right: [
-      #modality $dash.em$ #location
+      #modality #sym.dash.em #location
     ],
   )
   body
 }
+#state()
