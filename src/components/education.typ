@@ -1,4 +1,4 @@
-#import "../helpers.typ": body-helper, generic-one-by-two, generic-two-by-two
+#import "../layout.typ": body-helper, generic-one-by-two, generic-two-by-two
 
 #let edu(
   institution: "",

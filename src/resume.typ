@@ -1,9 +1,4 @@
 #import "components/header.typ": contact-info, default-contact-info, header
-#import "components/education.typ": edu
-#import "components/work.typ": work
-#import "components/project.typ": project
-#import "components/misc.typ": certificates, extracurriculars, skills-line
-#import "helpers.typ": *
 
 /*
  * Lines that start with == are formatted into section headings
@@ -91,9 +86,9 @@
   set page(
     margin: (
       top: style.margin.top,
-      bottom: style.margin.top,
-      right: style.margin.top,
-      left: style.margin.top,
+      bottom: style.margin.bottom,
+      right: style.margin.right,
+      left: style.margin.left,
     ),
     paper: style.paper,
   )

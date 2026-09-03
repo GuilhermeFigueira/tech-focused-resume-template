@@ -1,4 +1,4 @@
-#import "../helpers.typ": link-helper, text-with-icon
+#import "../utils.typ": link-helper, text-with-icon
 
 // Contact
 

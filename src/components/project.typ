@@ -1,4 +1,5 @@
-#import "../helpers.typ": body-helper, generic-one-by-two, generic-two-by-two, link-helper, text-with-icon
+#import "../layout.typ": body-helper, generic-one-by-two, generic-two-by-two
+#import "../utils.typ": link-helper, text-with-icon
 
 #let project-title-line(
   name: "",

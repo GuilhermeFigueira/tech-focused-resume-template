@@ -1,4 +1,4 @@
-#import "../helpers.typ": body-helper, generic-two-by-two
+#import "../layout.typ": body-helper, generic-two-by-two
 
 #let work(
   title: "",
@@ -14,7 +14,7 @@
     top-right: strong(dates),
     bottom-left: [
       #emph(title)
-      #if stack != "" [
+      #if tech-stack != "" [
         | #emph(tech-stack)
       ]
     ],
