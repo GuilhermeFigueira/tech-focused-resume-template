@@ -4,5 +4,7 @@
 #import "components/misc.typ": *
 #import "components/project.typ": *
 #import "components/work.typ": *
+#import "components/skills.typ": *
+#import "components/languages.typ": *
 #import "helpers.typ": *
 #import "resume.typ": *
