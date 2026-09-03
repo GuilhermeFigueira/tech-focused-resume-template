@@ -22,9 +22,8 @@
 // Document Data
 
 #let document-title = "Résumé" + name
-// TODO: Search default keywords
 #let document-description = ""
-#let document-keywords = "cv, "
+#let document-keywords = "resume, CV, curriculum vitae, professional resume"
 
 
 #show: resume.with(

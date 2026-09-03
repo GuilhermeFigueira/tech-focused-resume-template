@@ -1,3 +1,4 @@
+#import "../layout.typ": generic-one-by-two
 
 #let certificates(
   name: "",
@@ -21,8 +22,8 @@
   dates: "",
 ) = {
   generic-one-by-two(
-    left: strong(activity),
-    right: dates,
+    strong(activity),
+    dates,
   )
 }
 

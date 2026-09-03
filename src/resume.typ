@@ -48,8 +48,8 @@
     region: "us",
   ),
   document-metadata: (
-    title: str,
-    description: str,
+    title: "",
+    description: "",
     keywords: "cv",
   ),
   body,
@@ -102,7 +102,6 @@
     fill: rgb(style.accent-color),
   )
 
-  //TODO: Set up spacing
   // Small caps for section titles
   show heading.where(
     level: 1,
