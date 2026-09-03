@@ -51,7 +51,7 @@
     show-icons: false,
     show-sensitive-info: true,
     position: left,
-    gap: 0.2pt,
+    gap: 0.2em,
     info: default-contact-info,
   ),
 ) = {
@@ -86,66 +86,87 @@
   }
 }
 
-// Header
-
-#let header(
+#let author-title(
   author: (
     name: "",
     position: left,
     headline: "",
+    uppercase: false,
   ),
+  font-size: 10pt,
+) = align(author.position, {
+  let name = text(
+    weight: "extrabold",
+    size: font-size + 12pt,
+  )[#author.name]
+
+  let headline = author.headline
+
+  if author.uppercase {
+    name = upper(name)
+    headline = upper(headline)
+  }
+  name
+  if author.headline != "" {
+    v(-1.8em)
+    text(
+      size: font-size * 1.5,
+      headline,
+    )
+  }
+})
+
+
+// Header
+
+
+#let header(
   config: (
     style: "row",
     contact: (
       show-icons: false,
       show-sensitive-info: true,
       position: left,
-      gap: 0.2pt,
+      gap: 0.2em,
       info: default-contact-info,
+    ),
+    author: (
+      name: "",
+      position: left,
+      headline: "",
     ),
   ),
   font-size: 10pt,
 ) = {
   assert(
     config.style in ("row", "column"),
-    message: "header-info.style must be \"row\" or \"column\", received: " + repr(config.style),
+    message: "header style must be \"row\" or \"column\", received: " + repr(config.style),
+  )
+
+  assert(
+    config.contact.position in (left, right, center, horizon),
+    message: "contact info position must be \"left\", \"right\", \"center\", or \"horizon\", received: "
+      + repr(config.style),
+  )
+
+  assert(
+    config.author.position in (left, right, center),
+    message: "author info position must be \"left\", \"right\", or \"center\" received: " + repr(config.style),
   )
 
   if config.style == "row" {
     stack(
       spacing: 1em,
-
-      align(author.position)[
-        = #(author.name)
-
-        #if author.headline != "" {
-          text(
-            size: font-size * 1.3,
-            author.headline,
-          )
-        }
-      ],
-
+      author-title(author: config.author, font-size: font-size),
       contact-info(config: config.contact),
     )
+    v(-1em)
   } else {
     grid(
-      columns: (1fr, 1.5fr),
+      columns: (1fr, 1fr),
       align: horizon,
-      [
-        #align(author.position)[
-          = #(author.name)
-
-          #if author.headline != "" {
-            text(
-              size: font-size * 1.3,
-              author.headline,
-            )
-          }
-        ]
-      ],
-
-      contact-info(config: config.contact),
+      author-title(author: config.author, font-size: font-size), contact-info(config: config.contact),
     )
+    v(-0.5em)
   }
 }

@@ -1,3 +1,9 @@
+// #let resume-config = state("resume-config", (
+//   section-spacing: -0.5em,
+//   accent-color: "#000000",
+//   font-size: 10pt,
+// ))
+
 // Cannot just use normal --- ligature becuase ligatures are disabled for good reasons
 #let dates-helper(
   start-date: "",
@@ -6,10 +12,26 @@
   start-date + " " + sym.dash.em + " " + end-date
 }
 
+
 #let section(title, spacing-between: -0.5em, body) = {
-  [== #title]
-  body
+  [= #title]
+  pad(left: 1.4em, body)
   v(spacing-between)
+}
+
+// components/misc.typ (ou onde preferir centralizar layout helpers)
+
+#let grid-section(
+  columns: (1fr, 1fr),
+  gutter: 2.5em,
+  sections: (),
+) = {
+  v(2em, weak: true)
+  grid(
+    columns: columns,
+    gutter: gutter,
+    ..sections
+  )
 }
 
 // Generic two by two component for resume
@@ -19,21 +41,22 @@
   bottom-left: "",
   bottom-right: "",
 ) = {
-  [
-    #top-left #h(1fr) #top-right \
-    #bottom-left #h(1fr) #bottom-right
-    #linebreak()
-  ]
+  grid(
+    columns: (1fr, 1fr),
+    align(left)[#top-left \ #bottom-left], align(right)[#top-right \ #bottom-right],
+  )
+  v(-0.2em)
 }
 // Generic one by two component for resume
 #let generic-one-by-two(
-  left: "",
-  right: "",
+  first,
+  second,
 ) = {
-  [
-    #left #h(1fr) #right
-    #linebreak()
-  ]
+  grid(
+    columns: (1fr, 1fr),
+    align(left, first), align(right, second),
+  )
+  v(-0.2em)
 }
 
 #let link-helper(
@@ -55,4 +78,12 @@
     #box(img, height: 1.2em, baseline: 0.25em)
     #content
   ]
+}
+
+#let body-helper(body, padding: true) = {
+  if body != [] {
+    v(-0.4em)
+    set list(indent: 0.25em)
+    pad(left: if padding { 1.5em } else { 0em }, body)
+  }
 }

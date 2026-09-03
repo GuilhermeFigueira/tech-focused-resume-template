@@ -1,4 +1,4 @@
-#import "../helpers.typ": generic-two-by-two
+#import "../helpers.typ": body-helper, generic-two-by-two
 
 #let work(
   title: "",
@@ -22,6 +22,5 @@
       #modality #sym.dash.em #location
     ],
   )
-  body
+  body-helper(body)
 }
-#state()

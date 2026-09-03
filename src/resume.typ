@@ -18,21 +18,22 @@
  * #generic-two-by-two(top-left: "", top-right: "", bottom-left: "", bottom-right: "")
  * #generic-one-by-two(left: "", right: "")
  */
+// TODO: update types and none validation
 #let resume(
-  author: (
-    name: "",
-    headline: "",
-    position: left,
-    font-size: 20pt,
-  ),
   header-info: (
     style: "row",
     contact: (
       show-icons: false,
       show-sensitive-info: true,
       position: left,
-      gap: 0.2pt,
+      gap: 0.2em,
       info: default-contact-info,
+    ),
+    author: (
+      name: str,
+      headline: str,
+      position: left,
+      uppercase: false,
     ),
   ),
   style: (
@@ -40,15 +41,41 @@
     font: "Calibri",
     paper: "us-letter",
     font-size: 10pt,
+    margin: (
+      top: 0.3in,
+      bottom: 0.3in,
+      left: 0.4in,
+      right: 0.5in,
+    ),
   ),
   config: (
-    lang: "pt",
-    region: "br",
+    lang: "en",
+    region: "us",
+  ),
+  document-metadata: (
+    title: str,
+    description: str,
+    keywords: "cv",
   ),
   body,
 ) = {
+  // resume-config.update(cfg => (
+  //   cfg
+  //     + (
+  //       section-spacing: style.section-spacing,
+  //       accent-color: style.accent-color,
+  //       font-size: style.font-size,
+  //     )
+  // ))
+
   // Sets document metadata
-  set document(author: author.name, title: author.name)
+  set document(
+    author: header-info.author.name,
+    title: document-metadata.title,
+    keywords: document-metadata.keywords,
+    description: document-metadata.description,
+    date: none,
+  )
 
   // Document-wide formatting, including font and margins
   set text(
@@ -61,13 +88,12 @@
     ligatures: false,
   )
 
-  // Reccomended to have 0.5in margin on all sides
   set page(
     margin: (
-      top: 0.3in,
-      bottom: 0.3in,
-      left: 0.4in,
-      right: 0.5in,
+      top: style.margin.top,
+      bottom: style.margin.top,
+      right: style.margin.top,
+      left: style.margin.top,
     ),
     paper: style.paper,
   )
@@ -81,27 +107,24 @@
     fill: rgb(style.accent-color),
   )
 
-  // Name will be aligned left, bold and big
-  show heading.where(level: 1): it => [
-    #set align(author.position)
-    #set text(
-      weight: 700,
-      size: author.font-size,
-    )
-    #pad(it.body)
-  ]
-
+  //TODO: Set up spacing
   // Small caps for section titles
-  show heading.where(level: 2): it => [
-    #pad(top: 0pt, bottom: -10pt, [#smallcaps(it.body)])
-    #line(length: 100%, stroke: 1pt)
+  show heading.where(
+    level: 1,
+  ): it => block[
+    #set text(style.font-size + 2pt, weight: "bold")
+    #smallcaps(it.body)
+    #v(-1em)
+    #line(length: 100%, stroke: stroke(thickness: 0.4pt))
   ]
+  // show heading.where(level: 1): it => block[
+  //   #pad(top: 0pt, bottom: -10pt, [#smallcaps(it.body)])
+  //   #line(length: 100%, stroke: 1pt)
+  // ]
 
   // Header
-
   header(
     config: header-info,
-    author: author,
     font-size: style.font-size,
   )
 
