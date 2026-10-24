@@ -1,53 +1,38 @@
-#import "../layout.typ": generic-one-by-two
+#import "../layout.typ": generic-one-by-two, no-marker-list-helper
 
 #let certificates(
   name: "",
   issuer: "",
   url: "",
   date: "",
+  columns: (1fr, 1fr),
 ) = {
-  [
-    *#name*, #issuer
-    #if url != "" {
-      [
-        (#link("https://" + url)[#url])
-      ]
-    }
-    #h(1fr) #date
-  ]
+  if url != "" {
+    name = link(url)[#name]
+  }
+  generic-one-by-two(
+    cols: columns,
+    [*#name*, #issuer],
+    [*#date*],
+  )
 }
 
 #let extracurriculars(
   activity: "",
   dates: "",
+  columns: (1fr, 1fr),
 ) = {
   generic-one-by-two(
+    cols: columns,
     strong(activity),
     dates,
   )
 }
 
-#let skills-line(label, items) = {
-  // [*#label*: #items.join([ #sym.dot.c ])]
-  [
-    *#label*: #items.join([, ])
-  ]
-}
-
 #let skills(body) = {
-  if body != [] {
-    set par(leading: 0.6em)
-    set list(
-      marker: [],
-    )
-    body
-  }
+  no-marker-list-helper(body)
 }
 
 #let languages(body) = {
-  set par(leading: 0.6em)
-  set list(
-    marker: [],
-  )
-  body
+  no-marker-list-helper(body)
 }

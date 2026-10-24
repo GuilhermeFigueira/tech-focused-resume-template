@@ -6,10 +6,12 @@
   degree: "",
   gpa: "",
   location: "",
+  columns: (1fr, 1fr),
   // Makes dates on upper right like rest of components
   body,
 ) = {
   generic-two-by-two(
+    cols: columns,
     top-left: strong(institution),
     top-right: strong(dates),
     bottom-left: emph(degree),

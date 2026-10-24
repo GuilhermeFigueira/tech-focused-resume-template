@@ -7,9 +7,11 @@
   company: "",
   modality: "",
   location: "",
+  columns: (1fr, 1fr),
   body,
 ) = {
   generic-two-by-two(
+    cols: columns,
     top-left: strong(company),
     top-right: strong(dates),
     bottom-left: [

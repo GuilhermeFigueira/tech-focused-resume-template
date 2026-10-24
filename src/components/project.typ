@@ -28,6 +28,7 @@
   dates: "",
   relation: "",
   relation-type: "",
+  columns: (1fr, 1fr),
   body,
 ) = {
   if url != "" {
@@ -36,6 +37,7 @@
 
   if relation == "" {
     generic-one-by-two(
+      cols: columns,
       project-title-line(
         name: name,
         tagline: tagline,
@@ -45,6 +47,7 @@
     )
   } else {
     generic-two-by-two(
+      cols: columns,
       top-left: [
         #project-title-line(
           name: name,
