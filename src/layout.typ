@@ -51,6 +51,7 @@
   )
   v(-0.2em)
 }
+
 // Generic one by two component for resume
 #let generic-one-by-two(
   first,

@@ -1,19 +1,13 @@
 #import "components/header.typ": contact-info, default-contact-info, header
 
-/*
- * Lines that start with == are formatted into section headings
- * You can use the specific formatting functions if needed
- * The following formatting functions are listed below
- * #edu(dates: "", degree: "", gpa: "", institution: "", location: "", consistent: false)
- * #work(company: "", dates: "", location: "", title: "")
- * #project(dates: "", name: "", role: "", url: "")
- * certificates(name: "", issuer: "", url: "", date: "")
- * #extracurriculars(activity: "", dates: "")
- * There are also the following generic functions that don't apply any formatting
- * #generic-two-by-two(top-left: "", top-right: "", bottom-left: "", bottom-right: "")
- * #generic-one-by-two(left: "", right: "")
- */
+// Configures the resume document and renders its header and body.
+// Customize the header, visual style, language, and PDF metadata with `resume.with(...)`.
+// In the body, use `section(...)` to create sections and the exported components
+// `work`, `edu`, `project`, `certificates`, `extracurriculars`, `skills`, and `languages`
+// to format common resume entries.
+
 #let resume(
+  // Name, headline, and contact details shown in the document header.
   header-info: (
     style: "row",
     contact: (
@@ -21,6 +15,8 @@
       show-sensitive-info: true,
       position: left,
       gap: 0.2em,
+      // To add a contact field, define it in `src/components/header.typ` under
+      // `contact-fields` and provide its value in `header-info.contact.info`.
       info: default-contact-info,
     ),
     author: (
@@ -30,6 +26,7 @@
       uppercase: false,
     ),
   ),
+  // Document-wide appearance. Adjust font, page size, accent color, and margins here.
   style: (
     accent-color: "#000000",
     font: "Calibri",
@@ -42,36 +39,31 @@
       right: 0.5in,
     ),
   ),
+  // Language and regional conventions applied to document text.
   config: (
     lang: "en",
     region: "us",
   ),
+  // Metadata embedded in the generated PDF.
   document-metadata: (
     title: "",
     description: "",
     keywords: "cv",
   ),
+  // Resume content supplied after `resume.with(...)`.
   body,
 ) = {
-  // resume-config.update(cfg => (
-  //   cfg
-  //     + (
-  //       section-spacing: style.section-spacing,
-  //       accent-color: style.accent-color,
-  //       font-size: style.font-size,
-  //     )
-  // ))
-
-  // Sets document metadata
+  // Set document metadata from the header and metadata options.
   set document(
     author: header-info.author.name,
     title: document-metadata.title,
     keywords: document-metadata.keywords,
     description: document-metadata.description,
     date: none,
+    format: "pdf",
   )
 
-  // Document-wide formatting, including font and margins
+  // Apply document-wide text settings, including font and language.
   set text(
     // LaTeX style font
     font: style.font,
@@ -92,16 +84,16 @@
     paper: style.paper,
   )
 
-  // Link styles
+  // Style links consistently throughout the resume.
   show link: underline
   show link: set text(fill: rgb("#0645AD"))
 
-  // Accent Color Styling
+  // Apply the configured accent color to headings.
   show heading: set text(
     fill: rgb(style.accent-color),
   )
 
-  // Small caps for section titles
+  // Format level-one headings as compact, small-caps section titles.
   show heading.where(
     level: 1,
   ): it => block[
@@ -115,15 +107,13 @@
   //   #line(length: 100%, stroke: 1pt)
   // ]
 
-  // Header
+  // Render the configured name, headline, and contact information.
   header(
     config: header-info,
     font-size: style.font-size,
   )
 
-  // Main body.
+  // Justify and render the resume content passed to this show rule.
   set par(justify: true)
   body
 }
-
-

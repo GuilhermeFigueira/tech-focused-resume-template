@@ -1,5 +1,6 @@
 #import "../layout.typ": generic-one-by-two, no-marker-list-helper
 
+// Formats a certification with its issuer, date, and optional verification link.
 #let certificates(
   name: "",
   issuer: "",
@@ -17,6 +18,7 @@
   )
 }
 
+// Formats an extracurricular activity with its dates.
 #let extracurriculars(
   activity: "",
   dates: "",
@@ -29,10 +31,12 @@
   )
 }
 
+// Removes list markers and applies shared formatting to a skills list.
 #let skills(body) = {
   no-marker-list-helper(body)
 }
 
+// Removes list markers and applies shared formatting to a languages list.
 #let languages(body) = {
   no-marker-list-helper(body)
 }

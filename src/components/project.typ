@@ -1,11 +1,11 @@
 #import "../layout.typ": body-helper, generic-one-by-two, generic-two-by-two
 #import "../utils.typ": link-helper, text-with-icon
 
+// Builds a project's title line, including its optional role and tagline.
 #let project-title-line(
   name: "",
   tagline: "",
   role: "",
-  link: "",
 ) = {
   if role == "" [
     *#name*

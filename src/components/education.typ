@@ -1,13 +1,12 @@
 #import "../layout.typ": body-helper, generic-one-by-two, generic-two-by-two
 
+// Formats an education entry and places its additional content below the details.
 #let edu(
   institution: "",
   dates: "",
   degree: "",
-  gpa: "",
   location: "",
   columns: (1fr, 1fr),
-  // Makes dates on upper right like rest of components
   body,
 ) = {
   generic-two-by-two(

@@ -1,27 +1,29 @@
 #import "@local/tech-focused-resume:0.1.1": *
 
-// Author
+// Replace these sample values with your name and professional headline.
 #let name = "Jane Doe"
 #let headline = "Full Stack Developer"
 #let author-name-and-headline-uppercase = false
 
-// Contact Info
+// Add your contact details. Social profile values are usernames or profile paths,
+// while personal-site should be a domain or URL.
 #let email = "jane.doe@example.com"
 #let github = "janedoe"
 #let linkedin = "jane-doe"
 #let personal-site = "janedoe.dev"
 #let show-contact-info-icons = true
 
-// Sensitive Info
+// Control whether private contact details are included in the header.
 #let location = "San Francisco, CA"
 #let phone = "+1 (555) 123-4567"
 #let show-sensitive-contact-info = true
 
-// Document Data
+// These values become metadata in the generated PDF.
 #let pdf-title = "Resume - " + name
 #let pdf-description = ""
 #let pdf-keywords = "resume, CV, curriculum vitae, professional resume"
 
+// Configure the header, visual style, language, and PDF metadata.
 #show: resume.with(
   header-info: (
     style: "row",
@@ -70,10 +72,12 @@
 )
 
 
+// Add, remove, or reorder sections to match your experience.
 #section("Summary")[
   Full stack software developer with a background in web and mobile development. Experienced in building and shipping production applications with TypeScript, React, Next.js, and Node.js, along with backend automation using Python. Comfortable working across the stack, from UI design to API integration and cloud deployment.
 ]
 
+// Add one `work` entry per position. The content block contains its achievements.
 #section("Work Experience")[
   #work(
     title: "Software Engineer",
@@ -105,6 +109,7 @@
   ]
 ]
 
+// Use one `edu` entry per school or degree. The content block can list relevant coursework.
 #section("Education")[
   #edu(
     institution: "University of Example",
@@ -129,6 +134,7 @@
   ]
 ]
 
+// Use `project` entries for relevant personal, academic, or professional projects.
 #section("Academic and Personal Projects")[
   #project(
     name: "TaskFlow",
@@ -148,12 +154,12 @@
 
   #project(
     name: "WeatherNow",
-    role: "",
+    // role: "",
     tagline: "Minimalist weather forecast app",
     dates: dates-helper(start-date: "Oct 2021", end-date: "Jan 2022"),
-    relation: "",
-    relation-type: "",
-    url: "",
+    // relation: "",
+    // relation-type: "",
+    // url: "",
     columns: (1fr, 1fr),
   )[
     - Built a lightweight weather app using vanilla JavaScript and a public weather API.
@@ -163,6 +169,7 @@
   ]
 ]
 
+// `grid-section` places sections side by side; adjust columns to change their relative widths.
 #grid-section(
   columns: (3fr, 1fr),
   gutter: 2.5em,
@@ -185,6 +192,7 @@
   ),
 )
 
+// List certifications with their issuer, date, and an optional verification link.
 #section("Certificates")[
   #certificates(
     name: "AWS Certified Cloud Practitioner",

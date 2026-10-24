@@ -1,7 +1,6 @@
 #import "../utils.typ": link-helper, text-with-icon
 
-// Contact
-
+// Renders a contact value, optionally formatting it as a link or adding an icon.
 #let contact-item(
   value,
   prefix: "",
@@ -29,6 +28,8 @@
   }
 }
 
+// Supported contact fields and their display settings. To add a field, add an entry
+// here with its key, icon, and sensitivity; include link-type and prefix when needed.
 #let contact-fields = (
   (key: "phone", icon: "phone", sensitive: true),
   (key: "location", icon: "location", sensitive: true),
@@ -38,6 +39,7 @@
   (key: "personal-site", icon: "link", link-type: "https://", sensitive: false),
 )
 
+// Creates an empty contact-info dictionary with an entry for each supported field.
 #let default-contact-info = {
   let d = (:)
   for f in contact-fields {
@@ -46,6 +48,7 @@
   d
 }
 
+// Renders the configured contact details, with optional filtering and icons.
 #let contact-info(
   config: (
     show-icons: false,
@@ -86,6 +89,7 @@
   }
 }
 
+// Renders the author's name and optional headline with the selected alignment.
 #let author-title(
   author: (
     name: "",
@@ -117,9 +121,7 @@
 })
 
 
-// Header
-
-
+// Arranges the author and contact information in a row or a two-column layout.
 #let header(
   config: (
     style: "row",
@@ -146,12 +148,13 @@
   assert(
     config.contact.position in (left, right, center, horizon),
     message: "contact info position must be \"left\", \"right\", \"center\", or \"horizon\", received: "
-      + repr(config.style),
+      + repr(config.contact.position),
   )
 
   assert(
     config.author.position in (left, right, center),
-    message: "author info position must be \"left\", \"right\", or \"center\" received: " + repr(config.style),
+    message: "author info position must be \"left\", \"right\", or \"center\" received: "
+      + repr(config.author.position),
   )
 
   if config.style == "row" {
