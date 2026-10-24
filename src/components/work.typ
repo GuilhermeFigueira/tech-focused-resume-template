@@ -5,6 +5,7 @@
   tech-stack: "",
   dates: "",
   company: "",
+  company-category: "",
   modality: "",
   location: "",
   columns: (1fr, 1fr),
@@ -12,7 +13,10 @@
 ) = {
   generic-two-by-two(
     cols: columns,
-    top-left: strong(company),
+    top-left: {
+      strong(company)
+      if company-category != "" [ #sym.dot.c #company-category]
+    },
     top-right: strong(dates),
     bottom-left: [
       #emph(title)

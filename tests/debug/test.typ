@@ -81,6 +81,7 @@
     location: "San Francisco, CA",
     modality: "Hybrid",
     company: "Acme Corp",
+    company-category: "Fintech",
     dates: dates-helper(start-date: "Jan 2024", end-date: "Present"),
     columns: (1.5fr, 1fr),
   )[
@@ -95,6 +96,7 @@
     location: "San Fransico, CA",
     modality: "Remote",
     company: "Bright Labs",
+    company-category: "E-commerce",
     dates: dates-helper(start-date: "Jun 2022", end-date: "Dec 2023"),
     columns: (1.5fr, 1fr),
   )[

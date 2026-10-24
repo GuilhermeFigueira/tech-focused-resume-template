@@ -18,7 +18,7 @@
 #let show-sensitive-contact-info = true
 
 // Document Data
-#let pdf-title = "Resume — " + name
+#let pdf-title = "Resume - " + name
 #let pdf-description = ""
 #let pdf-keywords = "resume, CV, curriculum vitae, professional resume"
 
@@ -81,6 +81,7 @@
     location: "San Francisco, CA",
     modality: "Hybrid",
     company: "Acme Corp",
+    company-category: "Fintech",
     dates: dates-helper(start-date: "Jan 2024", end-date: "Present"),
     columns: (1.5fr, 1fr),
   )[
@@ -95,6 +96,7 @@
     location: "San Fransico, CA",
     modality: "Remote",
     company: "Bright Labs",
+    company-category: "E-commerce",
     dates: dates-helper(start-date: "Jun 2022", end-date: "Dec 2023"),
     columns: (1.5fr, 1fr),
   )[
@@ -156,6 +158,7 @@
   )[
     - Built a lightweight weather app using vanilla JavaScript and a public weather API.
     - Focused on fast load times and a clean, minimal interface with no framework overhead.
+    - Implemented geolocation-based auto-detection so users get local forecasts without manual search.
     - Presented the project at the school's annual tech fair.
   ]
 ]
@@ -181,3 +184,29 @@
     ],
   ),
 )
+
+#section("Certificates")[
+  #certificates(
+    name: "AWS Certified Cloud Practitioner",
+    issuer: "Amazon Web Services",
+    date: "March 2025",
+    url: "aws.amazon.com/certification",
+    columns: (1.5fr, 1fr),
+  )
+
+  #certificates(
+    name: "Python for Data Science, AI & Development",
+    issuer: "IBM (Coursera)",
+    date: "January 2025",
+    url: "coursera.org/verify/XXXXXXXX",
+    columns: (1.5fr, 1fr),
+  )
+
+  #certificates(
+    name: "Scrum Fundamentals Certified (SFC)",
+    issuer: "SCRUMstudy",
+    date: "November 2023",
+    url: "scrumstudy.com/certification",
+    columns: (1.5fr, 1fr),
+  )
+]
