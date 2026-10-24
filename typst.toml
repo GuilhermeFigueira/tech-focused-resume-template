@@ -11,8 +11,9 @@ description = "A modular technical focused resume designed to be very costumizab
 repository = "https://github.com/guilhermefigueira/tech-focused-resume-template"
 keywords = ["cv", "resume", "technical","modular","costumizable",  "ATS"]
 categories = ["cv"]
-# TODO: Add or remove items to this list https://github.com/typst/packages/blob/main/docs/tips.md#what-to-commit-what-to-exclude
 exclude = [
+  "tests",
+  ".gitignore",
   ".github",
   "scripts",
   "tests",

@@ -13,7 +13,6 @@
  * #generic-two-by-two(top-left: "", top-right: "", bottom-left: "", bottom-right: "")
  * #generic-one-by-two(left: "", right: "")
  */
-// TODO: update types and none validation
 #let resume(
   header-info: (
     style: "row",
