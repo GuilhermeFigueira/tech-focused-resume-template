@@ -60,7 +60,6 @@
     keywords: document-metadata.keywords,
     description: document-metadata.description,
     date: none,
-    format: "pdf",
   )
 
   // Apply document-wide text settings, including font and language.
