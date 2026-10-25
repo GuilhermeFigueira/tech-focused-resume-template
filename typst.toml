@@ -4,7 +4,7 @@
 name = "tech-focused-resume"
 version = "0.1.1"
 entrypoint = "src/lib.typ"
-authors = ["GuilhermeFigueira"]
+authors = ["Guilherme de Biazi Figueira <@GuilhermeFigueira>"]
 license = "MIT"
 description = "Modular, ATS-friendly résumé for software developers."
 repository = "https://github.com/guilhermefigueira/tech-focused-resume-template"
@@ -15,7 +15,6 @@ exclude = [
   ".gitignore",
   ".github",
   "scripts",
-  "tests",
   ".typstignore",
   "example.pdf",
   "example.png",
