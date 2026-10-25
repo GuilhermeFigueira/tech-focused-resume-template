@@ -27,7 +27,7 @@
   generic-one-by-two(
     cols: columns,
     strong(activity),
-    dates,
+    strong(dates),
   )
 }
 

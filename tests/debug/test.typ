@@ -111,7 +111,6 @@
     location: "Boston, MA",
     dates: dates-helper(start-date: "Aug 2019", end-date: "May 2023"),
     degree: "B.Sc. in Computer Science",
-    gpa: "",
     columns: (1fr, 1fr),
   )[
     Software Engineering, Artificial Intelligence, Object-Oriented Programming, Distributed Systems, Algorithms, Data Structures, Databases, Computer Networks, Web Development, Discrete Mathematics
@@ -122,7 +121,6 @@
     location: "Boston, MA",
     dates: dates-helper(start-date: "Jan 2016", end-date: "Dec 2018"),
     degree: "Technical Diploma in Systems Development",
-    gpa: "",
     columns: (1fr, 1fr),
   )[
     Programming Logic, Databases, Algorithms, Web Development, Mobile Development, Networks, Design
@@ -208,5 +206,12 @@
     date: "November 2023",
     url: "scrumstudy.com/certification",
     columns: (1.5fr, 1fr),
+  )
+]
+
+#section("Extracurriculars")[
+  #extracurriculars(
+    activity: "Open-source contributor",
+    dates: dates-helper(start-date: "2025", end-date: "Present"),
   )
 ]
