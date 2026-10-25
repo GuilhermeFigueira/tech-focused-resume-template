@@ -222,6 +222,12 @@ They are not covered by this package's license.
 
 ## License
 
-The package code is licensed under the MIT License. See [LICENSE](LICENSE).
+The package library in `src/` is licensed under the MIT License. See
+[LICENSE](LICENSE).
+
+The starter files in `template/` are licensed under the MIT-0 License. See
+[LICENSE-MIT-0](LICENSE-MIT-0). This allows users to modify and redistribute
+their initialized projects without attribution requirements.
+
 The Font Awesome icons in `src/assets/icons/` are third-party assets and are
 licensed separately under CC BY 4.0 as described above.
