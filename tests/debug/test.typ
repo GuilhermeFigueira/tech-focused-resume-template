@@ -159,6 +159,16 @@
     - Implemented geolocation-based auto-detection so users get local forecasts without manual search.
     - Presented the project at the school's annual tech fair.
   ]
+
+  #project(
+    name: "Budget Tracker",
+    tagline: "Personal finance tracking tool",
+    dates: "2024",
+    relation: "Personal Project",
+    columns: (1fr, 1fr),
+  )[
+    - Built a simple tool to track monthly spending and savings goals.
+  ]
 ]
 
 #grid-section(

@@ -59,7 +59,11 @@
         *#dates*
       ],
       bottom-left: [
-        #emph(relation-type) - #emph(relation)
+        #if relation-type == "" [
+          #relation
+        ] else [
+          #emph(relation-type) - #emph(relation)
+        ]
       ],
     )
   }

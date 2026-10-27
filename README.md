@@ -138,6 +138,9 @@ sections side by side. Each item in `sections` is normally created with
 ### `project`
 
 `project` supports an optional role, URL, tagline, relation, and relation type.
+When `relation` is provided without `relation-type`, it is displayed as normal
+text without a leading hyphen. When both are provided, they are displayed in
+italic with the relation type followed by a hyphen.
 
 ```typ
 #project(
@@ -148,6 +151,18 @@ sections side by side. Each item in `sections` is normally created with
   dates: "2023",
   relation: "University of Example",
   relation-type: "Capstone Project",
+)[
+  - Describe the project and its impact.
+]
+```
+
+For a personal project without an associated type, provide only `relation`:
+
+```typ
+#project(
+  name: "Budget Tracker",
+  dates: "2024",
+  relation: "Personal Project",
 )[
   - Describe the project and its impact.
 ]
