@@ -5,14 +5,14 @@ Modular, ATS-friendly résumé template for software developers.
 ## Quick start
 
 ```sh
-typst init @preview/tech-focused-resume:0.1.1
+typst init @preview/tech-focused-resume:0.1.2
 ```
 
 This creates a ready-to-edit résumé project. To use the package in an existing
 document, import its public definitions:
 
 ```typ
-#import "@preview/tech-focused-resume:0.1.1": *
+#import "@preview/tech-focused-resume:0.1.2": *
 ```
 
 ## Minimal example
@@ -21,7 +21,7 @@ The `resume` function configures the page and applies the résumé layout to the
 content that follows it. Pass it to a show rule with `resume.with(...)`:
 
 ```typ
-#import "@preview/tech-focused-resume:0.1.1": *
+#import "@preview/tech-focused-resume:0.1.2": *
 
 #show: resume.with(
   header-info: (

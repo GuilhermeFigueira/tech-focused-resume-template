@@ -2,7 +2,7 @@
 
 [package]
 name = "tech-focused-resume"
-version = "0.1.1"
+version = "0.1.2"
 entrypoint = "src/lib.typ"
 authors = ["Guilherme de Biazi Figueira <@GuilhermeFigueira>"]
 license = "MIT AND MIT-0"
