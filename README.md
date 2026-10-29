@@ -113,10 +113,10 @@ sections side by side. Each item in `sections` is normally created with
   company-category: "Fintech",
   title: "Software Engineer",
   tech-stack: "TypeScript, React",
-  dates: "Jan 2022 — Present",
+  dates: dates-helper(start-date: "Jan 2022", end-date: "Present"),
   modality: "Hybrid",
   location: "New York, NY",
-  columns: (1.5fr, 1fr),
+  columns: (2fr, 1fr),
 )[
   - Describe an achievement.
 ]
@@ -127,9 +127,10 @@ sections side by side. Each item in `sections` is normally created with
 ```typ
 #edu(
   institution: "University of Example",
-  degree: "B.Sc. in Computer Science",
-  dates: "2018 — 2022",
   location: "Boston, MA",
+  degree: "B.Sc. in Computer Science",
+  dates: dates-helper(start-date: "Aug 2019", end-date: "Aug 2023"),
+  columns: (1fr, 1fr),
 )[
   Relevant coursework or academic achievements.
 ]
@@ -145,12 +146,13 @@ with the relation type followed by a hyphen.
 ```typ
 #project(
   name: "TaskFlow",
-  tagline: "Team task management platform",
   role: "Lead Developer",
-  url: "https://github.com/janedoe/taskflow",
-  dates: "2023",
+  tagline: "Team task management platform",
+  dates: dates-helper(start-date: "Mar 2023", end-date: "Aug 2023"),
   relation: "University of Example",
   relation-type: "Capstone Project",
+  url: "https://github.com/janedoe/taskflow",
+  columns: (2fr, 1fr),
 )[
   - Describe the project and its impact.
 ]
@@ -161,10 +163,29 @@ For a personal project without an associated type, provide only `relation`:
 ```typ
 #project(
   name: "Budget Tracker",
-  dates: "2024",
+  tagline: "Personal finance tracking tool",
+  dates: dates-helper(start-date: "Feb 2022", end-date: "Jul 2022"),
   relation: "Personal Project",
+  columns: (1fr, 1fr),
 )[
   - Describe the project and its impact.
+]
+```
+
+For an open source contribution, use `role` to describe your contribution
+and `url` to link to the repository:
+
+```typ
+#project(
+  name: "OpenForms",
+  tagline: "Accessible form components for web applications",
+  role: "Open Source Contributor",
+  dates: "Oct 2024",
+  url: "https://github.com/janedoe/openforms",
+  columns: (3fr, 1fr),
+)[
+  - Describe your contribution and the impact you made.
+  - Describe how you collaborated with the community.
 ]
 ```
 
@@ -174,7 +195,7 @@ For a personal project without an associated type, provide only `relation`:
 #certificates(
   name: "AWS Certified Cloud Practitioner",
   issuer: "Amazon Web Services",
-  date: "March 2025",
+  date: "Mar 2025",
   url: "https://aws.amazon.com/certification",
 )
 ```
@@ -184,7 +205,7 @@ For a personal project without an associated type, provide only `relation`:
 ```typ
 #extracurriculars(
   activity: "Open-source contributor",
-  dates: "2021 — Present",
+  dates: dates-helper(start-date: "2024", end-date: "Present"),
 )
 ```
 
@@ -211,8 +232,8 @@ inline formatting such as `*bold labels*`:
 It is useful for keeping date formatting consistent:
 
 ```typ
-#let dates = dates-helper(start-date: "Jan 2022", end-date: "Present")
-Dates: #dates
+dates: dates-helper(start-date: "Jan 2022", end-date: "Mar 2022")
+dates: dates-helper(start-date: "Jul 2022", end-date: "Present")
 ```
 
 ## Fonts
