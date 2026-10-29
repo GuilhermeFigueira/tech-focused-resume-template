@@ -138,9 +138,9 @@ sections side by side. Each item in `sections` is normally created with
 ### `project`
 
 `project` supports an optional role, URL, tagline, relation, and relation type.
-When `relation` is provided without `relation-type`, it is displayed as normal
-text without a leading hyphen. When both are provided, they are displayed in
-italic with the relation type followed by a hyphen.
+When `relation` is provided without `relation-type`, it is displayed in italic
+without a leading hyphen. When both are provided, they are displayed in italic
+with the relation type followed by a hyphen.
 
 ```typ
 #project(

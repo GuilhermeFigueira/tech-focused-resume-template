@@ -60,7 +60,7 @@
       ],
       bottom-left: [
         #if relation-type == "" [
-          #relation
+          #emph(relation)
         ] else [
           #emph(relation-type) - #emph(relation)
         ]
